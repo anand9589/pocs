@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/*
+*/bin/Debug/net8.0
+*/.vs/*
+*/v17/*
+/ASP.Net/JqGridPOC/JqGridPOC/bin/Debug/net8.0
+/ASP.Net/JqGridPOC/JqGridPOC/obj
+/ASP.Net/JqGridPOC/JqGridPOC/wwwroot
+/ASP.Net/JqGridPOC/.vs/JqGridPOC/v17/TestStore/0
+/ASP.Net/JqGridPOC/.vs/JqGridPOC/v17
+/ASP.Net/JqGridPOC/.vs/JqGridPOC/FileContentIndex
