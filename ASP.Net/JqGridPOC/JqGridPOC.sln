@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36127.28 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JqGridPOC", "JqGridPOC\JqGridPOC.csproj", "{45653D3A-B695-4F7B-B7EE-564657CAC4AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45653D3A-B695-4F7B-B7EE-564657CAC4AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45653D3A-B695-4F7B-B7EE-564657CAC4AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45653D3A-B695-4F7B-B7EE-564657CAC4AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45653D3A-B695-4F7B-B7EE-564657CAC4AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0432E6DE-6524-4C20-9B1D-B892331E2A56}
+	EndGlobalSection
+EndGlobal
