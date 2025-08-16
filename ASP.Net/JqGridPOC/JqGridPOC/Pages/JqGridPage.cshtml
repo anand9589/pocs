@@ -1,0 +1,77 @@
+﻿@page
+@model JqGridPOC.Pages.JqGridPageModel
+@{
+    ViewData["Title"] = "JqGrid POC";
+}
+<h1>@ViewData["Title"]</h1>
+<div>
+    <table id="grid" height="400"></table>
+    <div id="pager"></div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+                $("#grid").jqGrid({
+            url: '/api/customers',
+            datatype: "json",
+            colModel: [
+                { label: 'ID', name: 'id', width: 75, key: true },
+                { label: 'Name', name: 'name', width: 150 },
+                { label: 'Email', name: 'email', width: 200 },
+                    {  label: 'Active',
+        name: 'isActive',
+        width: 'auto',
+        height: 400,
+        align: "center",
+        formatter: "checkbox",
+        edittype: "checkbox",
+        editable: true,              // makes it editable if you use inline editing
+        formatoptions: {             // map your data to true/false
+            disabled: false,         // ✅ allow clicking the checkbox
+            yes: "true",             // values considered "checked"
+            no: "false"              // values considered "unchecked"
+        },
+        unformat: function (cellValue, options, cell) {
+            return $('input', cell).is(':checked'); // return true/false instead of HTML
+        } },
+                    {    label: 'Select',
+        name: 'select',
+        width: 80,
+        align: "center",
+        formatter: function (cellValue, options, rowObject) {
+            return "<input type='checkbox' class='row-select' data-rowid='" + options.rowId + "' />";
+        },
+        unformat: function (cellValue, options, cell) {
+            return $('input', cell).is(':checked'); // return true/false instead of HTML
+        }
+                }
+            ],
+            viewrecords: true,
+            width: 780,
+            height: 250,
+            rowNum: 20,
+            pager: "#pager"
+        });
+
+        // ✅ Handle checkbox click
+        $(document).on("change", ".row-select", function () {
+            var rowId = $(this).data("rowid");        // get rowId
+            var rowData = $("#grid").jqGrid("getRowData", rowId); // fetch row data
+            console.log("Row clicked:", rowData);     // log full row data
+
+            $(".row-select:checkbox:checked").each(function(){
+                var currRowId = $(this).data('rowid');
+                console.log( rowId + " ----- .row-select:checkbox:checked --- " +currRowId);
+
+                if(currRowId !== rowId){
+                    $(this).prop('checked', false);
+                }
+
+            });
+        });
+
+
+        });
+    </script>
+}
